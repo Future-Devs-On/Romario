@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://84heaqxcf6gu"]
+
+[ext_resource type="Texture2D" uid="uid://buc8lqvbw4338" path="res://Sprites/start.png" id="1_gnhri"]
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_l0m00"]
+
+[sub_resource type="SystemFont" id="SystemFont_yybeh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qo0x2"]
+font = SubResource("SystemFont_yybeh")
+font_color = Color(0, 0, 0, 1)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_l0m00")
+
+[node name="Start" type="TouchScreenButton" parent="."]
+position = Vector2(550, 420)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_gnhri")
+
+[node name="Label" type="Label" parent="Start"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 1
+text = "Start
+"
+label_settings = SubResource("LabelSettings_qo0x2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="TouchScreenButton" parent="."]
+position = Vector2(550, 490)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("1_gnhri")
+
+[node name="Label" type="Label" parent="Quit"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 1
+text = "Quit
+"
+label_settings = SubResource("LabelSettings_qo0x2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
