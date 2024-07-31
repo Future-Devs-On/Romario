@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj6pohkkxtspi"]
+
+[ext_resource type="PackedScene" uid="uid://bbdtb0eoux583" path="res://Scenes/Player.tscn" id="1_rbqtq"]
+[ext_resource type="PackedScene" uid="uid://c1x7s6cm33lov" path="res://Scenes/ui.tscn" id="2_fkf51"]
+[ext_resource type="PackedScene" uid="uid://cix3nke2k2uso" path="res://Scenes/pause_menu.tscn" id="2_qo7sn"]
+[ext_resource type="PackedScene" uid="uid://bwgq4tdo33bob" path="res://Scenes/joystick.tscn" id="2_uoju3"]
+[ext_resource type="Texture2D" uid="uid://dus6qecsnkupc" path="res://Sprites/icon.svg" id="3_5yqff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybjy3"]
+size = Vector2(116, 226)
+
+[node name="Game" type="Node2D"]
+
+[node name="Ui" parent="." instance=ExtResource("2_fkf51")]
+
+[node name="BoxContainer" type="BoxContainer" parent="Ui"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -283.0
+offset_right = 283.0
+grow_vertical = 0
+
+[node name="Joystick" parent="Ui/BoxContainer" instance=ExtResource("2_uoju3")]
+position = Vector2(190, 90)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_rbqtq")]
+position = Vector2(540, 320)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(-0.333328, -0.666679)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="pause_menu" parent="." instance=ExtResource("2_qo7sn")]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(245, 261)
+shape = SubResource("RectangleShape2D_ybjy3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(244.5, 260.5)
+scale = Vector2(0.898437, 1.77344)
+texture = ExtResource("3_5yqff")

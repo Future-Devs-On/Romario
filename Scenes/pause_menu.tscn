@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://cix3nke2k2uso"]
+
+[ext_resource type="Texture2D" uid="uid://buc8lqvbw4338" path="res://Sprites/start.png" id="1_4ub44"]
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_w7ru8"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_w7ru8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.227451)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="Resume" type="TouchScreenButton" parent="VBoxContainer"]
+position = Vector2(4, 11)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_4ub44")
+
+[node name="Label" type="Label" parent="VBoxContainer/Resume"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="TouchScreenButton" parent="VBoxContainer"]
+process_mode = 3
+position = Vector2(4, 116)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("1_4ub44")
+
+[node name="Label" type="Label" parent="VBoxContainer/Menu"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

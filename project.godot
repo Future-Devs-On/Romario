@@ -11,13 +11,15 @@ config_version=5
 [application]
 
 config/name="Jogo do romario"
-run/main_scene="res://title_screen.tscn"
+run/main_scene="res://Scenes/title_screen.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [display]
 
-window/size/mode=2
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
@@ -36,6 +38,10 @@ left_button={
 "events": []
 }
 right_button={
+"deadzone": 0.5,
+"events": []
+}
+pause={
 "deadzone": 0.5,
 "events": []
 }

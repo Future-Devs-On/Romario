@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1x7s6cm33lov"]
+
+[ext_resource type="Texture2D" uid="uid://b7nj0o5er2jeu" path="res://Sprites/Setas/up.png" id="1_xafgi"]
+[ext_resource type="Texture2D" uid="uid://bvo7us81esd35" path="res://Sprites/Setas/down.png" id="2_ojyjj"]
+[ext_resource type="Texture2D" uid="uid://1r35epikmhag" path="res://Sprites/Setas/left.png" id="3_6omwx"]
+[ext_resource type="Texture2D" uid="uid://bmfskkup0q8jm" path="res://Sprites/Setas/right.png" id="4_vc1d2"]
+[ext_resource type="Texture2D" uid="uid://25pf7p7bjnso" path="res://Sprites/pause.png" id="5_cgueo"]
+
+[node name="Ui" type="CanvasLayer"]
+
+[node name="CntrlContainer" type="VBoxContainer" parent="."]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -240.0
+offset_right = 248.0
+offset_bottom = -20.0
+grow_vertical = 0
+
+[node name="Up" type="TouchScreenButton" parent="CntrlContainer"]
+position = Vector2(75, 5)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("1_xafgi")
+action = "up_button"
+
+[node name="Down" type="TouchScreenButton" parent="CntrlContainer"]
+position = Vector2(75, 145)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("2_ojyjj")
+action = "down_button"
+
+[node name="Left" type="TouchScreenButton" parent="CntrlContainer"]
+position = Vector2(4, 75)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_6omwx")
+action = "left_button"
+
+[node name="Right" type="TouchScreenButton" parent="CntrlContainer"]
+position = Vector2(144, 75)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("4_vc1d2")
+action = "right_button"
+
+[node name="PauseContainer" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -83.0
+offset_bottom = 80.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Pause" type="TouchScreenButton" parent="PauseContainer"]
+position = Vector2(-25, 25)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("5_cgueo")
+action = "pause"
