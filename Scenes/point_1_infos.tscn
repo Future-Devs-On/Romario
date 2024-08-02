@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://st88aadm2pxa"]
+
+[ext_resource type="Texture2D" uid="uid://dxaxixcrsw3tr" path="res://Sprites/tela.png" id="1_o47hl"]
+[ext_resource type="Script" path="res://Scripts/point_1_infos.gd" id="1_pufcb"]
+[ext_resource type="Texture2D" uid="uid://cuhbwaxg630xn" path="res://11.jpg" id="2_c6xkd"]
+[ext_resource type="Texture2D" uid="uid://2j4hmlqcx41n" path="res://Sprites/button.png" id="4_xivj2"]
+
+[node name="point_1_infos" type="CanvasLayer"]
+script = ExtResource("1_pufcb")
+
+[node name="tela" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o47hl")
+
+[node name="img" type="TextureRect" parent="."]
+offset_left = 75.0
+offset_top = 76.0
+offset_right = 958.0
+offset_bottom = 532.0
+texture = ExtResource("2_c6xkd")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.00351917, 0.00351917, 0.00351917, 1)
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 93.0
+offset_top = 71.0
+offset_right = -114.0
+offset_bottom = 470.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Esse é o Dumbledore, O MAGO!"
+
+[node name="A1" type="Button" parent="."]
+offset_left = 1247.0
+offset_top = 199.0
+offset_right = 1392.0
+offset_bottom = 345.0
+icon = ExtResource("4_xivj2")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="A2" type="TouchScreenButton" parent="."]
+position = Vector2(1541, 244)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_xivj2")
+
+[connection signal="pressed" from="A1" to="." method="_on_a_1_pressed"]
+[connection signal="pressed" from="A2" to="." method="_on_a_2_pressed"]

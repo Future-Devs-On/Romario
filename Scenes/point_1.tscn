@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckyfwb2aecaml"]
+
+[ext_resource type="Texture2D" uid="uid://dus6qecsnkupc" path="res://Sprites/icon.svg" id="1_tiyt0"]
+[ext_resource type="PackedScene" uid="uid://c1x7s6cm33lov" path="res://Scenes/ui.tscn" id="2_d1rgb"]
+[ext_resource type="PackedScene" uid="uid://cix3nke2k2uso" path="res://Scenes/pause_menu.tscn" id="3_7od4g"]
+[ext_resource type="Texture2D" uid="uid://dn2e5xlb3hnms" path="res://KOA_Nassau_2697x1517.jpg" id="4_aggyb"]
+
+[sub_resource type="GDScript" id="GDScript_nwmtb"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gij8"]
+size = Vector2(116, 226)
+
+[node name="Point 1" type="Node2D"]
+script = SubResource("GDScript_nwmtb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(245, 261)
+shape = SubResource("RectangleShape2D_6gij8")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(244.5, 260.5)
+scale = Vector2(0.898437, 1.77344)
+texture = ExtResource("1_tiyt0")
+
+[node name="Ui" parent="." instance=ExtResource("2_d1rgb")]
+
+[node name="pause_menu" parent="." instance=ExtResource("3_7od4g")]
+visible = false
+
+[node name="dog" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_aggyb")
