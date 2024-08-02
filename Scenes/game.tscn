@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bj6pohkkxtspi"]
+[gd_scene load_steps=11 format=3 uid="uid://bj6pohkkxtspi"]
 
 [ext_resource type="Script" path="res://Scripts/map.gd" id="1_qgdsw"]
 [ext_resource type="PackedScene" uid="uid://bbdtb0eoux583" path="res://Scenes/Player.tscn" id="1_rbqtq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cix3nke2k2uso" path="res://Scenes/pause_menu.tscn" id="2_qo7sn"]
 [ext_resource type="PackedScene" uid="uid://bwgq4tdo33bob" path="res://Scenes/joystick.tscn" id="2_uoju3"]
 [ext_resource type="Texture2D" uid="uid://dus6qecsnkupc" path="res://Sprites/icon.svg" id="3_5yqff"]
+[ext_resource type="PackedScene" uid="uid://b6g7y73aq25mb" path="res://Scenes/ponto_interesse.tscn" id="3_n82wf"]
 [ext_resource type="Texture2D" uid="uid://2j4hmlqcx41n" path="res://Sprites/button.png" id="7_8k7h4"]
 [ext_resource type="PackedScene" uid="uid://st88aadm2pxa" path="res://Scenes/point_1_infos.tscn" id="8_jud1h"]
 
@@ -14,6 +15,45 @@ size = Vector2(116, 226)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qgdsw")
+
+[node name="player" parent="." instance=ExtResource("1_rbqtq")]
+position = Vector2(540, 320)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-0.333328, -0.666679)
+scale = Vector2(0.333333, 0.333333)
+
+[node name="ponto_interesse" parent="." instance=ExtResource("3_n82wf")]
+position = Vector2(1127, 62)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -114)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(245, 261)
+shape = SubResource("RectangleShape2D_ybjy3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(244.5, 260.5)
+scale = Vector2(0.898437, 1.77344)
+texture = ExtResource("3_5yqff")
+
+[node name="B1" type="Button" parent="."]
+visible = false
+offset_left = 1205.0
+offset_top = 611.0
+offset_right = 1350.0
+offset_bottom = 757.0
+icon = ExtResource("7_8k7h4")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="B2" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(1240, 798)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("7_8k7h4")
 
 [node name="Ui" parent="." instance=ExtResource("2_fkf51")]
 
@@ -29,50 +69,16 @@ metadata/_edit_use_anchors_ = true
 [node name="Joystick" parent="Ui/BoxContainer" instance=ExtResource("2_uoju3")]
 position = Vector2(190, 90)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_rbqtq")]
-position = Vector2(540, 320)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-0.333328, -0.666679)
-scale = Vector2(0.333333, 0.333333)
-
 [node name="pause_menu" parent="." instance=ExtResource("2_qo7sn")]
 visible = false
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, -114)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(245, 261)
-shape = SubResource("RectangleShape2D_ybjy3")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(244.5, 260.5)
-scale = Vector2(0.898437, 1.77344)
-texture = ExtResource("3_5yqff")
-
-[node name="B1" type="Button" parent="."]
-offset_left = 1163.0
-offset_top = 227.0
-offset_right = 1308.0
-offset_bottom = 373.0
-icon = ExtResource("7_8k7h4")
-icon_alignment = 1
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="B2" type="TouchScreenButton" parent="."]
-position = Vector2(1240, 798)
-scale = Vector2(4, 4)
-texture_normal = ExtResource("7_8k7h4")
 
 [node name="point_1_infos" parent="." instance=ExtResource("8_jud1h")]
 visible = false
 
-[connection signal="pressed" from="B1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="B1" to="." method="_on_b_1_pressed"]
-[connection signal="pressed" from="B1" to="point_1_infos" method="_on_button_pressed"]
+[connection signal="pressed" from="B1" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="B1" to="point_1_infos" method="_on_b_1_pressed"]
+[connection signal="pressed" from="B1" to="point_1_infos" method="_on_button_pressed"]
 [connection signal="pressed" from="B2" to="." method="_on_touch_screen_button_pressed"]
 [connection signal="pressed" from="B2" to="." method="_on_b_2_pressed"]
 [connection signal="pressed" from="B2" to="point_1_infos" method="_on_touch_screen_button_pressed"]

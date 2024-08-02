@@ -45,6 +45,10 @@ pause={
 "deadzone": 0.5,
 "events": []
 }
+interact={
+"deadzone": 0.5,
+"events": []
+}
 
 [input_devices]
 

@@ -18,40 +18,54 @@ texture = ExtResource("1_o47hl")
 
 [node name="img" type="TextureRect" parent="."]
 offset_left = 75.0
-offset_top = 76.0
-offset_right = 958.0
-offset_bottom = 532.0
+offset_top = 74.0
+offset_right = 956.0
+offset_bottom = 537.0
 texture = ExtResource("2_c6xkd")
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(0.00351917, 0.00351917, 0.00351917, 1)
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 93.0
-offset_top = 71.0
-offset_right = -114.0
-offset_bottom = 470.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -868.0
+offset_top = -467.0
+offset_right = 848.0
+offset_bottom = -71.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_font_sizes/font_size = 100
 text = "Esse é o Dumbledore, O MAGO!"
 
-[node name="A1" type="Button" parent="."]
-offset_left = 1247.0
-offset_top = 199.0
-offset_right = 1392.0
-offset_bottom = 345.0
-icon = ExtResource("4_xivj2")
-icon_alignment = 1
-expand_icon = true
-metadata/_edit_use_anchors_ = true
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -98.0
+offset_bottom = 77.0
+grow_horizontal = 0
 
-[node name="A2" type="TouchScreenButton" parent="."]
-position = Vector2(1541, 244)
+[node name="A2" type="TouchScreenButton" parent="VBoxContainer"]
+position = Vector2(-253, 241)
 scale = Vector2(4, 4)
 texture_normal = ExtResource("4_xivj2")
 
+[node name="A1" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -636.0
+offset_top = 201.0
+offset_right = -497.0
+offset_bottom = 349.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("4_xivj2")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/A2" to="." method="_on_a_2_pressed"]
 [connection signal="pressed" from="A1" to="." method="_on_a_1_pressed"]
-[connection signal="pressed" from="A2" to="." method="_on_a_2_pressed"]
