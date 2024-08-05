@@ -15,4 +15,5 @@ func _physics_process(delta):
 		velocity = Vector2(0,0)
 	move_and_slide()
 
-
+func player():
+	pass

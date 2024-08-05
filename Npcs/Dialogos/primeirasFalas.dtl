@@ -1,0 +1,7 @@
+join NPC1 1
+NPC1: Ola, bom te ver!
+NPC1: Posso te contar uma coisa?
+- Claro, por que não?
+	O Papai Noel não existe
+- Eu pareço fofoqueiro pra você?
+	Calma calabreso, só perguntei...
