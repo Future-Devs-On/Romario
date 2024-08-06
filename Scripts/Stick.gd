@@ -31,12 +31,11 @@ func calculateVector():
 		parent.posVector.y = (global_position.y - parent.global_position.y)/maxLength
 		
 
-
-
 func _on_button_button_down():
 	pressing = true
 
 
 func _on_button_button_up():
 	pressing = false
+
 
