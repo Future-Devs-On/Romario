@@ -1,3 +1,4 @@
+extends CharacterBody2D
 
 var player_in_area = false
 
@@ -17,4 +18,5 @@ func _on_area_dialogo_body_exited(body):
 		player_in_area = false
 
 func run_dialogue(dialogue_string):
-	pass
+	Dialogic.start(dialogue_string)
+	

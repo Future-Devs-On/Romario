@@ -1,13 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3pihf1s3f06g"]
+[gd_scene load_steps=5 format=3 uid="uid://c3pihf1s3f06g"]
 
 [ext_resource type="Texture2D" uid="uid://cq5w521max1jt" path="res://Sprites/Hobbit - jumpt4.png" id="1_qm6ah"]
 [ext_resource type="Script" path="res://Scripts/npc_1.gd" id="1_v1thv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_63ghh"]
+radius = 11.0454
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1wc0t"]
 radius = 40.0125
 
 [node name="npc1" type="CharacterBody2D"]
 script = ExtResource("1_v1thv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13, -14)
+shape = SubResource("CircleShape2D_63ghh")
 
 [node name="Timer" type="Timer" parent="."]
 
