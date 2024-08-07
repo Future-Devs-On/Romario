@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj6pohkkxtspi"]
+[gd_scene load_steps=12 format=3 uid="uid://bj6pohkkxtspi"]
 
 [ext_resource type="Script" path="res://Scripts/map.gd" id="1_qgdsw"]
 [ext_resource type="PackedScene" uid="uid://bbdtb0eoux583" path="res://Scenes/Player.tscn" id="1_rbqtq"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b6g7y73aq25mb" path="res://Scenes/ponto_interesse.tscn" id="3_n82wf"]
 [ext_resource type="Texture2D" uid="uid://2j4hmlqcx41n" path="res://Sprites/button.png" id="7_8k7h4"]
 [ext_resource type="PackedScene" uid="uid://st88aadm2pxa" path="res://Scenes/point_1_infos.tscn" id="8_jud1h"]
+[ext_resource type="PackedScene" uid="uid://c3pihf1s3f06g" path="res://Scenes/npc_1.tscn" id="10_ug0g8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybjy3"]
 size = Vector2(116, 226)
@@ -74,6 +75,10 @@ visible = false
 
 [node name="point_1_infos" parent="." instance=ExtResource("8_jud1h")]
 visible = false
+
+[node name="npc1" parent="." instance=ExtResource("10_ug0g8")]
+position = Vector2(781, 135)
+scale = Vector2(2.41782, 2.41782)
 
 [connection signal="pressed" from="B1" to="." method="_on_b_1_pressed"]
 [connection signal="pressed" from="B1" to="." method="_on_button_pressed"]
