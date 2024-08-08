@@ -1,17 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj6pohkkxtspi"]
+[gd_scene load_steps=9 format=3 uid="uid://bj6pohkkxtspi"]
 
 [ext_resource type="Script" path="res://Scripts/map.gd" id="1_qgdsw"]
 [ext_resource type="PackedScene" uid="uid://bbdtb0eoux583" path="res://Scenes/Player.tscn" id="1_rbqtq"]
 [ext_resource type="PackedScene" uid="uid://c1x7s6cm33lov" path="res://Scenes/ui.tscn" id="2_fkf51"]
 [ext_resource type="PackedScene" uid="uid://cix3nke2k2uso" path="res://Scenes/pause_menu.tscn" id="2_qo7sn"]
 [ext_resource type="PackedScene" uid="uid://bwgq4tdo33bob" path="res://Scenes/joystick.tscn" id="2_uoju3"]
-[ext_resource type="Texture2D" uid="uid://dus6qecsnkupc" path="res://Sprites/icon.svg" id="3_5yqff"]
 [ext_resource type="PackedScene" uid="uid://b6g7y73aq25mb" path="res://Scenes/ponto_interesse.tscn" id="3_n82wf"]
 [ext_resource type="PackedScene" uid="uid://st88aadm2pxa" path="res://Scenes/point_1_infos.tscn" id="8_jud1h"]
 [ext_resource type="PackedScene" uid="uid://c3pihf1s3f06g" path="res://Scenes/npc_1.tscn" id="9_cts4j"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybjy3"]
-size = Vector2(116, 226)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_qgdsw")
@@ -25,18 +21,6 @@ scale = Vector2(0.333333, 0.333333)
 
 [node name="ponto_interesse" parent="." instance=ExtResource("3_n82wf")]
 position = Vector2(1127, 62)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, -114)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(245, 261)
-shape = SubResource("RectangleShape2D_ybjy3")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(244.5, 260.5)
-scale = Vector2(0.898437, 1.77344)
-texture = ExtResource("3_5yqff")
 
 [node name="Ui" parent="." instance=ExtResource("2_fkf51")]
 
