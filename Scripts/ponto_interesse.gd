@@ -1,7 +1,8 @@
 extends Area2D
 
 #cria uma variável para referenciar o script do menu de informações
-@onready var point_1_infos = $"../point_1_infos"
+
+@onready var point_1_infos = $"../../point_1_infos"
 
 #cria uma variável chamada in_area e seta ela como falsa
 var in_area = false

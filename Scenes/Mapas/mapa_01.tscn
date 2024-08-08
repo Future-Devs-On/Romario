@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxuws5bte4ib1"]
+
+[ext_resource type="Texture2D" uid="uid://d1on7erysmhyl" path="res://AssetsTeste/Wallpapers/Cards 1.png" id="1_sxuoe"]
+
+[node name="Mapa_01" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(421, 280)
+scale = Vector2(0.397949, 0.397949)
+texture = ExtResource("1_sxuoe")

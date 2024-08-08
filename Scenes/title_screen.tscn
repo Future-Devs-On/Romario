@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://84heaqxcf6gu"]
+[gd_scene load_steps=6 format=3 uid="uid://84heaqxcf6gu"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_vlkpa"]
+[ext_resource type="Texture2D" uid="uid://bx8qidojqmt3n" path="res://AssetsTeste/Wallpapers/Greenhouse.png" id="2_gogkn"]
 [ext_resource type="Texture2D" uid="uid://buc8lqvbw4338" path="res://Sprites/start.png" id="2_j12c5"]
 
 [sub_resource type="SystemFont" id="SystemFont_sge2o"]
@@ -18,6 +19,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_vlkpa")
+
+[node name="Imagem de fundo" type="Sprite2D" parent="."]
+position = Vector2(981.5, 530.5)
+scale = Vector2(1.09766, 1.0752)
+texture = ExtResource("2_gogkn")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
