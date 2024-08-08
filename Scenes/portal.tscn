@@ -1,0 +1,58 @@
+[gd_scene load_steps=12 format=3 uid="uid://cj1lev4osigkn"]
+
+[ext_resource type="Script" path="res://Scripts/Portal.gd" id="1_3krg6"]
+[ext_resource type="Texture2D" uid="uid://ba2toiemjhmd5" path="res://AssetsTeste/UiSprites/UI_Flat_Select_01a1.png" id="1_fi0li"]
+[ext_resource type="Texture2D" uid="uid://dx1ju0n2st1sm" path="res://AssetsTeste/UiSprites/UI_Flat_Select_01a2.png" id="2_ufdwm"]
+[ext_resource type="Texture2D" uid="uid://bbunaikx5tu7x" path="res://AssetsTeste/UiSprites/UI_Flat_Select_01a3.png" id="3_66q0g"]
+[ext_resource type="Texture2D" uid="uid://qy701by2agmd" path="res://AssetsTeste/UiSprites/UI_Flat_Select_01a4.png" id="4_llv1m"]
+[ext_resource type="Texture2D" uid="uid://55fihb7ybi2y" path="res://AssetsTeste/UiSprites/UI_Flat_Select_02a1.png" id="5_mk657"]
+[ext_resource type="Texture2D" uid="uid://e8urst7abstq" path="res://AssetsTeste/UiSprites/UI_Flat_Select_02a2.png" id="6_gcu3x"]
+[ext_resource type="Texture2D" uid="uid://w8qmjbvp63g2" path="res://AssetsTeste/UiSprites/UI_Flat_Select_02a3.png" id="7_3boio"]
+[ext_resource type="Texture2D" uid="uid://c38ic57wlp5p2" path="res://AssetsTeste/UiSprites/UI_Flat_Select_02a4.png" id="8_x8uag"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htafw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fi0li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ufdwm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_66q0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_llv1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mk657")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gcu3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3boio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x8uag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ge4wn"]
+radius = 16.0312
+
+[node name="Portal" type="Area2D"]
+scale = Vector2(1.92, 1.92)
+script = ExtResource("1_3krg6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_htafw")
+autoplay = "default"
+frame_progress = 0.674886
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ge4wn")
