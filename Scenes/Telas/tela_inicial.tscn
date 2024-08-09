@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=3 uid="uid://84heaqxcf6gu"]
+
+[ext_resource type="Script" path="res://Scripts/Telas_Script/title_screen.gd" id="1_vlkpa"]
+[ext_resource type="Texture2D" uid="uid://bx8qidojqmt3n" path="res://AssetsTeste/Wallpapers/Greenhouse.png" id="2_gogkn"]
+[ext_resource type="Texture2D" uid="uid://buc8lqvbw4338" path="res://Sprites/Botões de menu/start.png" id="2_j12c5"]
+[ext_resource type="Theme" uid="uid://dhx4uny1xuh3g" path="res://Themes/theme_btn.tres" id="3_16dwk"]
+[ext_resource type="PackedScene" uid="uid://gynppw74ysu1" path="res://Scenes/Ui/menu_config.tscn" id="4_mms5g"]
+
+[sub_resource type="SystemFont" id="SystemFont_wrln5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qo0x2"]
+font = SubResource("SystemFont_wrln5")
+font_color = Color(0, 0, 0, 1)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_vlkpa")
+
+[node name="Imagem de fundo" type="Sprite2D" parent="."]
+position = Vector2(679, 299)
+scale = Vector2(1.09766, 1.0752)
+texture = ExtResource("2_gogkn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_16dwk")
+text = "Start"
+icon = ExtResource("2_j12c5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Config" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_16dwk")
+text = "Config"
+icon = ExtResource("2_j12c5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_16dwk")
+text = "Quit"
+icon = ExtResource("2_j12c5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="menu_config" parent="CanvasLayer" instance=ExtResource("4_mms5g")]
+visible = false
+
+[node name="Start11" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(546, 261.5)
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("2_j12c5")
+
+[node name="Label" type="Label" parent="Start11"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 1
+text = "Start
+"
+label_settings = SubResource("LabelSettings_qo0x2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit11" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2(546, 410)
+scale = Vector2(4.5, 4.5)
+texture_normal = ExtResource("2_j12c5")
+
+[node name="Label" type="Label" parent="Quit11"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 1
+text = "Quit
+"
+label_settings = SubResource("LabelSettings_qo0x2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start11" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit11" to="." method="_on_quit_pressed"]

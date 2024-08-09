@@ -1,0 +1,26 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dhx4uny1xuh3g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_unixk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5qt7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e5fl1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4iefe"]
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0.314316, 0.314316, 0.314316, 1)
+Button/colors/font_hover_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_hover_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/font_pressed_color = Color(0.313726, 0.313726, 0.313726, 1)
+Button/colors/icon_focus_color = Color(0.158472, 0.158472, 0.158472, 1)
+Button/colors/icon_hover_color = Color(0.156863, 0.156863, 0.156863, 1)
+Button/colors/icon_hover_pressed_color = Color(0.156863, 0.156863, 0.156863, 1)
+Button/colors/icon_pressed_color = Color(0.156863, 0.156863, 0.156863, 1)
+Button/constants/h_separation = 16
+Button/constants/icon_max_width = 128
+Button/styles/focus = SubResource("StyleBoxEmpty_unixk")
+Button/styles/hover = SubResource("StyleBoxEmpty_p5qt7")
+Button/styles/normal = SubResource("StyleBoxEmpty_e5fl1")
+Button/styles/pressed = SubResource("StyleBoxEmpty_4iefe")

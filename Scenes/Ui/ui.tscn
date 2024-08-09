@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1x7s6cm33lov"]
+
+[ext_resource type="Texture2D" uid="uid://osy5t4fw0e1x" path="res://Sprites/Botões de ação/Action_btn.png" id="2_xw7ce"]
+[ext_resource type="Texture2D" uid="uid://25pf7p7bjnso" path="res://Sprites/Botões de ação/pause.png" id="5_cgueo"]
+
+[node name="Ui" type="CanvasLayer"]
+
+[node name="pause_btn_container" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -83.0
+offset_bottom = 80.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="Pause" type="TouchScreenButton" parent="pause_btn_container"]
+position = Vector2(-25, 25)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("5_cgueo")
+action = "pause"
+
+[node name="action_btn_container" type="VBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -81.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="action_btn_container"]
+position = Vector2(-200, -200)
+scale = Vector2(6, 6)
+texture_normal = ExtResource("2_xw7ce")
+action = "interact"
